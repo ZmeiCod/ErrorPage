@@ -1,0 +1,132 @@
+@import '../variables';
+
+.pizza-block {
+  width: 280px;
+  text-align: center;
+  margin-bottom: 65px;
+  transition: all 0.2s ease-in-out;
+  border-radius: 50px;
+
+  &:hover {
+    transform: scale(1.03);
+  }
+
+  &-wrapper {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__image {
+    width: 280px;
+    height: 200px;
+    border-radius: 50px;
+  }
+
+  &__selector {
+    display: flex;
+    background-color: $creamy;
+    border-radius: 50px;
+    flex-direction: column;
+    padding: 6px;
+    margin: 10px;
+
+    ul {
+      display: flex;
+      flex: 1;
+
+      li {
+        padding: 8px;
+        flex: 1;
+        cursor: pointer;
+        font-weight: 600;
+        font-size: 14px;
+        @include noselect();
+        &.active {
+          background: $orange;
+          transition: 0.3s;
+          box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.04);
+          border-radius: 50px;
+          cursor: auto;
+        }
+      }
+    }
+  }
+
+  &__bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+
+  &__price {
+    font-weight: bold;
+    font-size: 22px;
+    line-height: 27px;
+    letter-spacing: 0.015em;
+    color: $orange;
+  }
+}
+
+.basket{
+  &__image{
+    width: 280px;
+    height: 200px;
+    border-radius: 10px;
+  }
+}
+
+
+.item-block{
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px;
+  }
+
+  &__title {
+    font-size: 24px;
+    font-weight: 900;
+    letter-spacing: 1%;
+    color: $orange;
+  }
+
+  &__weight {
+    color: $gray;
+    font-size: 16px;
+  }
+
+  &__description {
+    color: $gray;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    cursor: pointer;
+    transition: max-height 0.2s ease;
+  }
+  
+  &__description-hover {
+    display: none;
+    position: absolute;
+    background-color: $black;
+    color: $gray;
+    max-width: 280px;
+    padding: 10px;
+    border-radius: 8px;
+    z-index: 10;
+  }
+
+  &:hover {
+    &__description {
+      max-height: none;
+    }
+
+    &__description-hover {
+      display: block;
+    }
+  }
+}
