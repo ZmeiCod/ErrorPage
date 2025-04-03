@@ -5,19 +5,15 @@ import Home from "./pages/Home";
 import NotFound from "./pages/NotFound";
 import "./scss/app.scss";
 
-export const Context = React.createContext()
-
 function App() {
-  const [searchValue, setSearchValue] = React.useState()
-
   return (
-    <Context.Provider value={{searchValue, setSearchValue}}>
-      <Header/>
+    <>
+      <Header />
       <Routes>
-        <Route path="/" element={<Home/> } />
+        <Route path="/" element={<Home />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
-    </Context.Provider>
+    </>
   );
 }
 
